@@ -7,8 +7,8 @@ var base = prompt("Base Regulatoria:");
 const fecha_intereses = prompt("Fecha inicio cómputo de intereses:");
 var intereses = prompt("Monto de intereses");
 
-  // Aca quiero sumar los valores base + intereses; no se como hacer para que me reconozcan a esos valores como numeros
-let total = base + intereses
+  // Aca quiero sumar los valores base + intereses
+let total = parseInt(base) + parseInt(intereses) 
 
   // funcion para determinar mas de una vez "abogado" en el texto
 let abogadoDos = abogado
