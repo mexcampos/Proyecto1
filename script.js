@@ -3,7 +3,10 @@ const date = prompt("Fecha (dd/mm/aaaa):");
 const autos = prompt("Carátula de los autos (sin comillas):");
 const expte_num = prompt("Número de expediente:");
 const abogado = prompt("Nombre del abogado:");
-const base = prompt("Base Regulatoria:");
+var base = prompt("Base Regulatoria:");
+const fecha_intereses = prompt("Fecha inicio cómputo de intereses:");
+var intereses = prompt("Monto de intereses");
+let total = base + intereses
 
 let abogadoDos = abogado
 let abogadoTres = abogado
@@ -16,4 +19,6 @@ document.getElementById("abogado").textContent = abogado;
 document.getElementById("abogadoDos").textContent = abogado;
 document.getElementById("abogadoTres").textContent = abogado;
 document.getElementById("base").textContent = base;
-
+document.getElementById("fecha_intereses").textContent = fecha_intereses;
+document.getElementById("intereses").textContent = intereses;
+document.getElementById("total").textContent = total;
