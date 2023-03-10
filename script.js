@@ -25,3 +25,60 @@ document.getElementById("base").textContent = base;
 document.getElementById("fecha_intereses").textContent = fecha_intereses;
 document.getElementById("intereses").textContent = intereses;
 document.getElementById("total").textContent = total;
+
+  // Función para que escriba en palabras los numeros
+function convertToLetters() {
+  
+  // Obtener los numeros
+const numUno = document.getElementById("base").value;
+const numDos = document.getElementById("intereses").value;
+const numTres = document.getElementById("total").value;
+
+  // Definir palabras para cada digito y determinar valor
+const unidad = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"];
+const decena = ["", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"];
+const veintena = ["", "", "veintiuno", "veintidós", "veintitrés", "veinticuatro", "veinticinco", "veintiséis", "veintisiete", "veintiocho", "veintinueve"];
+const centena = ["diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"];
+const places = ["", "mil", "millón", "billón", "trillón"];
+
+  // Convertir los números a letras usando los arrays definidos
+let result = "";
+let i = 0;
+do
+{
+  const threeDigits = num % 1000;
+  const onesDigit = threeDigits % 10;
+  const tensDigit = Math.floor(threeDigits / 10) % 10;
+  const hundredsDigit = Math.floor(threeDigits / 100) % 10;
+  let threeDigitsString = "";
+
+  if (hundredsDigit !== 0)
+  {
+        threeDigitsString += ones[hundredsDigit] + " hundred ";
+  }
+  if (tensDigit === 1)
+  {
+    threeDigitsString += teens[onesDigit] + " ";
+  }
+  else
+  {
+    if (tensDigit !== 0) {
+      threeDigitsString += tens[tensDigit] + " ";
+    }
+    if (onesDigit !== 0) {
+      threeDigitsString += ones[onesDigit] + " ";
+    }
+  }
+    if (threeDigits !== 0) {
+      threeDigitsString += places[i] + " ";
+    }
+
+    result = threeDigitsString + result;
+    num = Math.floor(num / 1000);
+    i++;
+}
+while (num > 0);
+
+  // Actualizar el resultado con la palabra convertida
+document.getElementById("result").textContent = result.trim();
+}
