@@ -41,7 +41,7 @@ const veintena = ["", "", "veintiuno", "veintidós", "veintitrés", "veinticuatr
 const centena = ["diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"];
 const places = ["", "mil", "millón", "billón", "trillón"];
 
-  // Convertir los números a letras usando los arrays definidos
+  // Convertir los números a letras usando los arrays definidos - PARA REVISAR
 let result = "";
 let i = 0;
 do
