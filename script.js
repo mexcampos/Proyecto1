@@ -8,6 +8,8 @@ const fecha_intereses = prompt("Fecha inicio cómputo de intereses:");
 var intereses = prompt("Monto de intereses");
 
   // Aca quiero sumar los valores base + intereses
+let base = parseInt(base)
+let intereses = parseInt(intereses)
 let total = parseInt(base) + parseInt(intereses) 
 
   // funcion para determinar mas de una vez "abogado" en el texto
@@ -27,58 +29,91 @@ document.getElementById("intereses").textContent = intereses;
 document.getElementById("total").textContent = total;
 
   // Función para que escriba en palabras los numeros
-function convertToLetters() {
-  
-  // Obtener los numeros
-const numUno = document.getElementById("base").value;
-const numDos = document.getElementById("intereses").value;
-const numTres = document.getElementById("total").value;
 
-  // Definir palabras para cada digito y determinar valor
-const unidad = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"];
-const decena = ["", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"];
-const veintena = ["", "", "veintiuno", "veintidós", "veintitrés", "veinticuatro", "veinticinco", "veintiséis", "veintisiete", "veintiocho", "veintinueve"];
-const centena = ["diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"];
-const places = ["", "mil", "millón", "billón", "trillón"];
-
-  // Convertir los números a letras usando los arrays definidos - PARA REVISAR
-let result = "";
-let i = 0;
-do
+function convertToLetters(  )
 {
-  const threeDigits = num % 1000;
-  const onesDigit = threeDigits % 10;
-  const tensDigit = Math.floor(threeDigits / 10) % 10;
-  const hundredsDigit = Math.floor(threeDigits / 100) % 10;
-  let threeDigitsString = "";
-
-  if (hundredsDigit !== 0)
+  const units = ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'];
+  const tens = ['', '', 'veinte', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta','ochenta', 'noventa'];
+  const specialTens = ['diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis','diecisiete', 'dieciocho', 'diecinueve'];
+  const specialTwenties = ['', 'veintiuno', 'veintidós', 'veintitrés', 'veinticuatro', 'veinticinco', 'veintiséis', 'veintisiete', 'veintiocho', 'veintinueve'];
+  const hundreds = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos','seiscientos', 'setecientos', 'ochocientos', 'novecientos'];
+  const thousands = ['', 'mil', 'dos mil', 'tres mil', 'cuatro mil', 'cinco mil', 'seis mil','siete mil', 'ocho mil', 'nueve mil'];
+    
+  let str = '';
+  const parts = amount.toString().split('con');
+  const whole = parseInt(parts[0]);
+  const decimals = parts[1] ? parseInt(parts[1]) : 0;
+    
+  if (whole === 0)
   {
-        threeDigitsString += ones[hundredsDigit] + " hundred ";
+    str = 'cero';
   }
-  if (tensDigit === 1)
+  else if (whole < 0)
   {
-    threeDigitsString += teens[onesDigit] + " ";
+    str = 'Número no soportado';
   }
   else
   {
-    if (tensDigit !== 0) {
-      threeDigitsString += tens[tensDigit] + " ";
-    }
-    if (onesDigit !== 0) {
-      threeDigitsString += ones[onesDigit] + " ";
+  
+    // Process thousands
+  const thousandsNum = Math.floor(whole / 1000);
+  const hundredsNum = whole % 1000;
+  if (thousandsNum > 0)
+  {
+    str += `${convertToLetters(thousandsNum)} mil`;
+    if (hundredsNum > 0)
+    {
+      str += ' ';
     }
   }
-    if (threeDigits !== 0) {
-      threeDigitsString += places[i] + " ";
+      
+  // Process hundreds
+  if (hundredsNum > 0)
+  {
+    if (hundredsNum === 100)
+    {
+      str += 'cien';
     }
-
-    result = threeDigitsString + result;
-    num = Math.floor(num / 1000);
-    i++;
+    else
+    {
+      const hundredsIndex = Math.floor(hundredsNum / 100);
+      str += `${hundreds[hundredsIndex]}`;
+      if (hundredsNum % 100 !== 0)
+      {
+        str += ' ';
+      }
+    }
+        
+  // Process tens
+  const tensNum = hundredsNum % 100;
+  if (tensNum < 10)
+  {
+    str += `${units[tensNum]}`;
+  }
+  else if (tensNum >= 10 && tensNum <= 19)
+  {
+          str += `${specialTens[tensNum - 10]}`;
+  }
+  else
+  {
+    const tensIndex = Math.floor(tensNum / 10);
+    str += `${tens[tensIndex]}`;
+    const unitsNum = tensNum % 10;
+    if (unitsNum > 0) {
+      str += ` y ${units[unitsNum]}`;
+    }
+  }
+  }
+  }
+    
+  // Process decimals
+  if (decimals > 0)
+  {
+    str += ` con ${decimals.toString().padEnd(2, '0')}/100`;
+  }
+    
+  return str;
 }
-while (num > 0);
 
   // Actualizar el resultado con la palabra convertida
 document.getElementById("result").textContent = result.trim();
-}
