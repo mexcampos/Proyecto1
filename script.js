@@ -3,14 +3,15 @@ const date = prompt("Fecha (dd/mm/aaaa):");
 const autos = prompt("Carátula de los autos (sin comillas):");
 const expte_num = prompt("Número de expediente:");
 const abogado = prompt("Nombre del abogado:");
-var base = prompt("Base Regulatoria:");
+let base = prompt("Base Regulatoria:");
 const fecha_intereses = prompt("Fecha inicio cómputo de intereses:");
-var intereses = prompt("Monto de intereses");
+let intereses = prompt("Monto de intereses");
 
   // Aca quiero sumar los valores base + intereses
 let base = parseInt(base)
 let intereses = parseInt(intereses)
 let total = parseInt(base) + parseInt(intereses) 
+console.log(total)
 
   // funcion para determinar mas de una vez "abogado" en el texto
 let abogadoDos = abogado
@@ -119,4 +120,4 @@ function convertToLetters(  )
 document.getElementById("result").textContent = result.trim();
 
  //mexxxxxxxxxxxxx 
- 
+
