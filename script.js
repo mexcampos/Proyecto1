@@ -118,4 +118,4 @@ function convertToLetters(  )
   // Actualizar el resultado con la palabra convertida
 document.getElementById("result").textContent = result.trim();
 
-
+ //mexxxxxxxxxxxxx 
