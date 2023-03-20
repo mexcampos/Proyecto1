@@ -9,10 +9,46 @@
 <body>
     <p>Honorarios de Ejecución</p>
 <p>AUTO NÚMERO: <br>
-CÓRDOBA, <span id="date"></span>. Y VISTOS: Estos autos caratulados: “<span id="autos"></span>” Expte. Nº <span id="expte_num"></span>, de los que resulta que el letrado de la parte actora, Dr. <span id="abogado"></span> solicita la regulación de los honorarios profesionales por las tareas de ejecución de sentencia.  Y CONSIDERANDO: I) Que el letrado <span id="abogadoDos"></span> inició ejecución de sentencia por capital y honorarios, lo que fue proveído favorablemente y notificado. Luego, conforme a lo dispuesto en el art. 82 de la Ley 9.459, la solicitud formulada resulta procedente. II) La base para practicar dicha regulación es el valor total de lo que fue motivo de ejecución -capital y honorarios- que, en el caso, asciende a la suma de pesos un millón ciento veintiocho mil doscientos veintisiete con veintidós centavos ($ <span id="base"></span>). Dicha suma, según lo prescripto por el art. 30 de la Ley 9.459, debe ser actualizada, por lo que se calculan intereses por tasa pasiva promedio mensual del BCRA desde el <span id="fecha_intereses"></span>, los que ascienden a la suma de pesos doscientos tres mil cuarenta y tres con cincuenta y nueve centavos ($ <span id="intereses"></span>). Adicionados los accesorios al monto adeudado, conforman la cantidad total de pesos un millón trescientos treinta y un mil doscientos setenta con ochenta centavos ($ <span id="total"></span>). Atendiendo a las disposiciones citadas y las pautas cualitativas de los incs. 1, 2 y 7 del art. 39 ib., corresponde estimar los estipendios en el 30% del punto mínimo de la escala del art. 36 del cuerpo normativo citado (20%), sobre la mencionada base. Por lo expuesto y normas citadas, el Tribunal RESUELVE: Regular los honorarios profesionales del Dr. <span id="abogadoTres"></span>, por las tareas de ejecución de sentencia, en la suma de pesos setenta y nueve mil ochocientos setenta y seis con veinticuatro centavos ($  79.876,24), a cargo de Prevención ART SA, como mandataria de la Superintendencia de Seguros de la Nación, en su carácter de administradora del Fondo de Reserva del art. 34.1 de la ley 24.557.   Protocolícese y hágase saber.
+CÓRDOBA, <span id="date"></span>. Y VISTOS: Estos autos caratulados: “<span id="autos"></span>” Expte. Nº <span id="expte_num"></span>, de los que resulta que el letrado de la parte actora, Dr. <span id="abogado"></span> solicita la regulación de los honorarios profesionales por las tareas de ejecución de sentencia.  Y CONSIDERANDO: I) Que el letrado <span id="abogadoDos"></span> inició ejecución de sentencia por capital y honorarios, lo que fue proveído favorablemente y notificado. Luego, conforme a lo dispuesto en el art. 82 de la Ley 9.459, la solicitud formulada resulta procedente. II) La base para practicar dicha regulación es el valor total de lo que fue motivo de ejecución -capital y honorarios- que, en el caso, asciende a la suma de pesos un millón ciento veintiocho mil doscientos veintisiete con veintidós centavos ($ <span id="base"></span>). Dicha suma, según lo prescripto por el art. 30 de la Ley 9.459, debe ser actualizada, por lo que se calculan intereses por tasa pasiva promedio mensual del BCRA desde el <span id="fecha_intereses"></span>, los que ascienden a la suma de pesos doscientos tres mil cuarenta y tres con cincuenta y nueve centavos ($ <span id="intereses"></span>). Adicionados los accesorios al monto adeudado, conforman la cantidad total de pesos un millón trescientos treinta y un mil doscientos setenta con ochenta centavos ($ <span id="total"></span>). Atendiendo a las disposiciones citadas y las pautas cualitativas de los incs. 1, 2 y 7 del art. 39 ib., corresponde estimar los estipendios en el 30% del punto mínimo de la escala del art. 36 del cuerpo normativo citado (20%), sobre la mencionada base. Por lo expuesto y normas citadas, el Tribunal RESUELVE: Regular los honorarios profesionales del Dr. <span id="abogadoTres"></span>, por las tareas de ejecución de sentencia, en la suma de pesos setenta y nueve mil ochocientos setenta y seis con veinticuatro centavos ($  <span id="honorarios"></span>), a cargo de Prevención ART SA, como mandataria de la Superintendencia de Seguros de la Nación, en su carácter de administradora del Fondo de Reserva del art. 34.1 de la ley 24.557.   Protocolícese y hágase saber.
 </p>
 
-<script src="script.js"></script>
+<script>
+    // Preguntas para el usuario
+date = prompt("Fecha (dd/mm/aaaa):");
+autos = prompt("Carátula de los autos (sin comillas):");
+expte_num = prompt("Número de expediente:");
+abogado = prompt("Nombre del abogado:");
+base = prompt("Base Regulatoria:");
+fecha_intereses = prompt("Fecha inicio cómputo de intereses:");
+intereses = prompt("Monto de intereses");
+
+  // Aca quiero sumar los valores base + intereses
+base = parseInt(base);
+intereses = parseInt(intereses);
+total = parseInt(base) + parseInt(intereses);
+console.log(total);
+
+    // Determina el monto de honorarios aplicando las escalas salariales predeterminadas
+honorarios = total * 0.3 * 0.2;
+console.log(honorarios);
+
+  // funcion para determinar mas de una vez "abogado" en el texto
+let abogadoDos = abogado;
+let abogadoTres = abogado;
+
+  // Actualiza los span
+document.getElementById("date").textContent = date;
+document.getElementById("autos").textContent = autos;
+document.getElementById("expte_num").textContent = expte_num;
+document.getElementById("abogado").textContent = abogado;
+document.getElementById("abogadoDos").textContent = abogado;
+document.getElementById("abogadoTres").textContent = abogado;
+document.getElementById("base").textContent = base;
+document.getElementById("fecha_intereses").textContent = fecha_intereses;
+document.getElementById("intereses").textContent = intereses;
+document.getElementById("total").textContent = total;
+document.getElementById("honorarios").textContent = honorarios;
+</script>
 
 
 
