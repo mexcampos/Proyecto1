@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acuerdo LRT sin desistimiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p>AUTO NÚMERO: <br>
+  CÓRDOBA, <span id="fecha"></span>. <span class="bold"> Y VISTOS: </span> Estos autos caratulados: “<span id="autos" class="bold"></span>” <span class="bold">Expte. Nº </span><span id="expteNum" class="bold"></span>, en los que el Tribunal de la Sala Segunda de la Cámara Única del Trabajo, constituido unipersonalmente por el Vocal de Cámara <span id="vocal"></span>, procede a dictar sentencia homologatoria, de los que resulta que: <span class="bold">I)</span> Conforme constancias de autos, en oportunidad de la Audiencia de Vista de la Causa, el/la actor/a <span id="actor"></span> DNI <span id="dni"></span>, junto a su letrado/a <span id="abActor"></span>; y la demandada <span id="demandada"></span>, a través de su letrado/a apoderado/a <span id="abDemandada"></span>, formularon acuerdo conciliatorio, solicitando su homologación, cuyas cláusulas se transcriben a seguidamente: “<span id="acuerdo" class="cursiva"></span>”. <span class="bold">Y CONSIDERANDO: I)</span> En orden al acuerdo formulado, no se verifica impedimento legal alguno que obste a su homologación, toda vez que versa sobre hechos litigiosos respecto de los cuales ninguna prueba ha sido valorada y de sus términos no surge se infrinja lo dispuesto por el art. 11, inc. 1, de la ley 24.557. Además, el convenio logrado por las partes, cumple con los recaudos dispuestos por el art. 15 LCT, norma que, si bien integra un ordenamiento distinto de la Ley de Riesgos de Trabajo, en tanto protege los derechos de la persona trabajadora al momento de conciliar, resulta de aplicación al caso de autos. <span class="bold">II)</span> Conforme a lo convenido, corresponde imponer las costas del acuerdo a cargo de la demandada <span id="demandada1"></span>, con excepción de los peritos de control que son a cargo de sus proponentes. <span class="bold">III)</span> Que siendo la etapa procesal oportuna deben regularse de manera definitiva los honorarios de los profesionales intervinientes de acuerdo a lo dispuesto por los arts. 1, 2, 36, 39, 44, 49,  97 y cc. de la Ley 9459. Así, al letrado de la parte actora, Dr. <span id="abActor1"></span>, cabe estimarlos en la suma convenida. No corresponde regular honorarios al letrado <span id="abDemandada1"></span>, atento a lo manifestado por este (arts. 2 y 5 del CA). Asimismo, deben determinarse los honorarios del perito médico interviniente en el pleito, siguiendo al efecto la normativa contenida en el art. 49 de la Ley 9.459 y teniendo en cuenta las pautas de evaluación cualitativas previstas en el art. 39, incs. 2 y 4,  del cuerpo legal citado. Así, se fijan en la suma equivalente a <span id="jus"></span> jus, con más los aportes previsionales e IVA correspondientes. Por todo lo expuesto, el Tribunal <span class="bold">RESUELVE: I.</span> Homologar el acuerdo celebrado entre el <span id="actor1"></span> DNI <span id="dni1"></span> y <span id="demandada2"></span>, en la forma y bajo las condiciones que se expresan precedentemente, interponiendo para su validez la pública autoridad que el Tribunal inviste. <span class="bold">II.</span> Imponer las costas del acuerdo a cargo de la demandada <span id="demandada3"></span>, con excepción de los peritos de control que son a cargo de sus proponentes. <span class="bold">III.</span> Regular en forma definitiva los honorarios del Dr. <span id="abActor2"></span> en la suma convenida de pesos … ($ …). No regular honorarios al Dr. <span id="abDemandada2"></span>. <span class="bold">IV.</span> Regular en forma definitiva los honorarios del perito médico oficial, <span id="perito"></span>, en la suma de pesos … centavos (<span id="result"></span>), con más la suma de pesos … centavos ( <span id="resultAportes"></span> ) en concepto de aportes previsionales, y pesos … centavos ($ …) en concepto de restitución de IVA. <span class="bold">V.</span> Emplazar a la demandada para que en el término de quince (15) días abone por la vía pertinente, el importe correspondiente a tasa de justicia, que asciende a la suma de … ($ …) y para que en el término de cinco (5) días cumplimente con los aportes previstos por el art. 17, inc. a), de la Ley 6468 (t.o. Ley 8404), que ascienden a la suma de pesos … ($ …) por abogado o grupo de abogados de cada parte, todo bajo apercibimientos de ley. A los fines del cumplimiento de la obligación impuesta deberá utilizar la página web del Poder Judicial de Córdoba (www.justiciacordoba.gob.ar). <span class="bold">IV.</span> Hacer saber a la obligada al pago del acuerdo que los montos correspondientes deberán ser depositados en el Banco Provincia de Córdoba, en la cuenta que resulte abierta en los presentes autos (art. 277, LCT), debiendo consignar las sumas correspondientes por cargo mensual bancario, lo que integra las costas judiciales del presente, y efectuar en autos, en tiempo y forma, imputación de las sumas depositadas, bajo apercibimientos de ley. <span class="bold">IV.</span> Emplazar al accionante para que en el término de cinco (5) días, confeccione y adjunte al Tribunal vía remota, el oficio al Registro Público de Accidentes y Enfermedades Labores prescripto por el art. 3 inc. 3° de la ley 8380, a los fines de su suscripción y diligenciamiento electrónicos por Secretaría, bajo apercibimiento de ley. Protocolícese y hágase saber.
+
+<script>
+  // Seleccionar vocal
+  //let options = ["Option 1", "Option 2", "Option 3"];
+  //let selectedOption = prompt("Please select an option:\n" + options.join("\n"));
+  //selectedOption = vocal;
+  //document.getElementById("vocal").textContent = vocal;
+
+// Preguntas para el usuario
+fecha = prompt("Fecha (dd/mm/aaaa):");
+autos = prompt("Carátula de los autos (sin comillas):");
+expteNum = prompt("Número de expediente:");
+vocal = prompt("Nombre del Vocal: ");
+actor = prompt("Nombre del actor/a");
+dni = prompt("DNI del actor/a:");
+abActor = prompt("Abogado del actor:");
+demandada = prompt("Demandada:");
+abDemandada = prompt("Abogado de la demandada:");
+acuerdo = prompt("Acuerdo");
+perito = prompt("Perito Médico:");
+jus = prompt("Cuanto jus para el perito médico: ");
+
+// funcion para determinar mas de una vez los id en el texto
+let actor1 = actor;
+let dni1 = dni;
+let abActor1 = abActor;
+let abActor2 = abActor;
+let abDemandada1 = abDemandada;
+let abDemandada2 = abDemandada;
+let demandada1 = demandada;
+let demandada2 = demandada;
+let demandada3 = demandada;
+
+// funcion para calcular los honorarios del perito médico
+jusNum = parseInt(jus) * 5968.91;
+console.log(jusNum);
+
+var result = "$ " + jusNum.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+console.log(result);
+
+// funcion para calcular los aportes del perito medico
+num = jusNum * 0.15;
+let aportes = num.toFixed(2);
+console.log(aportes);
+
+var resultAportes = "$ " + num.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+console.log(resultAportes);
+
+// Actualiza los span
+document.getElementById("fecha").textContent = fecha;
+document.getElementById("autos").textContent = autos;
+document.getElementById("expteNum").textContent = expteNum;
+document.getElementById("vocal").textContent = vocal;
+document.getElementById("actor").textContent = actor;
+document.getElementById("abActor").textContent = abActor;
+document.getElementById("dni").textContent = dni;
+document.getElementById("demandada").textContent = demandada;
+document.getElementById("abDemandada").textContent = abDemandada;
+document.getElementById("acuerdo").textContent = acuerdo;
+document.getElementById("perito").textContent = perito;
+document.getElementById("jus").textContent = jus;
+document.getElementById("result").textContent = result;
+document.getElementById("resultAportes").textContent = resultAportes;
+</script>
+
+
+
+</body>
+</html>
