@@ -1,53 +1,19 @@
-function convertToLetters(num)
-{
-    const ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-    const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-    const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-    const places = ['', 'thousand', 'million', 'billion', 'trillion']; // Add more as needed
-  
-    if (num === 0) {
-      return ones[0];
-    }
-  
-    let words = [];
-    let i = 0;
-  
-    while (num > 0) {
-      const chunk = num % 1000;
-      if (chunk !== 0) {
-        const chunkWords = [];
-        const hundredsDigit = Math.floor(chunk / 100);
-        const tensDigit = Math.floor((chunk % 100) / 10);
-        const onesDigit = chunk % 10;
-  
-        if (hundredsDigit !== 0) {
-          chunkWords.push(ones[hundredsDigit] + ' hundred');
-        }
-  
-        if (tensDigit === 1) {
-          chunkWords.push(teens[onesDigit]);
-        } else {
-          if (tensDigit !== 0) {
-            chunkWords.push(tens[tensDigit]);
-          }
-          if (onesDigit !== 0) {
-            chunkWords.push(ones[onesDigit]);
-          }
-        }
-  
-        if (i !== 0) {
-          chunkWords.push(places[i]);
-        }
-  
-        words.unshift(...chunkWords);
-      }
-  
-      num = Math.floor(num / 1000);
-      i++;
-    }
-  
-    return words.join(' ');
-  }
+// Define the sample text with blank spaces
+const sampleText = "I like to ________ and ________ on the weekends.";
 
-console.log(convertToLetters(0));
+// Ask the user for input
+const userInput = prompt("Please enter a verb:");
+
+// Fill the blanks with the user's input
+const filledText = sampleText.replace("________", userInput);
+
+// Ask for more input for the second blank
+const userInput2 = prompt("Please enter another verb:");
+
+// Fill the second blank with the user's input
+const finalText = filledText.replace("________", userInput2);
+
+// Output the final text with the filled blanks
+console.log(finalText);
+
   
