@@ -90,8 +90,19 @@ if (tasa > tasaMinimo) {
 console.log(tasaResult);
 } else {
   var tasaResult = "$ " + tasaMinimo.toLocaleString('de-DE', {minimumFractionDigits: 2,maximumFractionDigits: 2});
+  var tasaMinimoLetras = "ocho mil novecientos cincuenta y tres con cuarenta";
 }
-// pureba
+// Determinar los aportes colegiales
+var colegio = parseInt(baseAcuerdo) * 0.01;
+var colegioMinimo = 2280.00;
+console.log(colegio);
+if (colegio > colegioMinimo) {
+  var colegioResult = "$ " + colegio.toLocaleString('de-DE', {minimumFractionDigits: 2,maximumFractionDigits: 2});
+console.log(colegioResult);
+} else {
+  var colegioResult = "$ " + colegioMinimo.toLocaleString('de-DE', {minimumFractionDigits: 2,maximumFractionDigits: 2});
+  var colegioMinimoLetras = "dos mil doscientos ochenta";
+}
 
 // Actualiza los span
 document.getElementById("fecha").textContent = fecha;
@@ -120,4 +131,6 @@ document.getElementById("result").textContent = result;
 document.getElementById("honAbActorResult").textContent = honAbActorResult;
 document.getElementById("resultIvaPerito").textContent = resultIvaPerito;
 document.getElementById("tasaResult").textContent = tasaResult;
-      
+document.getElementById("tasaMinimoLetras").textContent = tasaMinimoLetras;
+document.getElementById("colegioResult").textContent = colegioResult;
+document.getElementById("colegioMinimoLetras").textContent = colegioMinimoLetras;
