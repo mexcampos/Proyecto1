@@ -91,6 +91,7 @@ console.log(tasaResult);
 } else {
   var tasaResult = "$ " + tasaMinimo.toLocaleString('de-DE', {minimumFractionDigits: 2,maximumFractionDigits: 2});
 }
+// pureba
 
 // Actualiza los span
 document.getElementById("fecha").textContent = fecha;
